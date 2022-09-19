@@ -1,1 +1,1 @@
-# data-structure-c
+# data-structure-c(자료구조)
