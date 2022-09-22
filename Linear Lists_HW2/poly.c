@@ -1,3 +1,5 @@
+// 다항식의 덧셈
+
 #include <stdio.h>
 #define MAX(a,b) a > b ? a : b
 #define MAX_DEGREE 50
