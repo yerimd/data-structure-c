@@ -1,3 +1,4 @@
+// Linear List 구현
 #include <stdio.h>
 #include <stdlib.h>
 
