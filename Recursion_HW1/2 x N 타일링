@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 1000
+int arr[MAX + 1];
+int topDown(int n);
+int bottomUp(int n);
+int topDown(int n) {
+ if (n == 0 || n == 1)
+ return 1;
+ if (arr[n] > 0)
+ return arr[n];
+ arr[n] = topDown(n - 2) + topDown(n - 1);
+ arr[n] %= 10007;
+ return arr[n];
+}
+int bottomUp(int n) {
+ arr[0] = 1;
+ arr[1] = 1;
+ for (int i = 2; i <= n; i++) {
+ arr[i] = arr[i - 2] + arr[i - 1];
+ arr[i] %= 10007;
+ }
+ return arr[n];
+}
+int main() {
+ int n;
+ scanf("%d", &n);
+ //printf("%d\n", topDown(n));
+ printf("%d\n", bottomUp(n));
+ return 0;
+}
